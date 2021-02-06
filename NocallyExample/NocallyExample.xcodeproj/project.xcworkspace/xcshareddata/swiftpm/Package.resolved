@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Nocally",
+        "repositoryURL": "/Users/martinhartl/Code/Nocally",
+        "state": {
+          "branch": "main",
+          "revision": "80cde75a4dc4aa16d17244fca0e98af3639e3922",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
