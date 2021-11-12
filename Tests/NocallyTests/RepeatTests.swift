@@ -14,7 +14,7 @@ final class RepeatTests: XCTestCase {
 
     func test_encodingDecoding_daily() {
         let time = Trigger.Time(hour: 12, minute: 12)
-        let daily = Repeat.daily(2, time: time)
+        let daily = Repeat.everyDays(2, time: time)
 
         let encodedString = encodeRepeat(daily)
         XCTAssertEqual(encodedString, "{\"daily\":[2,{\"minute\":12,\"hour\":12}]}")

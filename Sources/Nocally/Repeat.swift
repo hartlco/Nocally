@@ -2,7 +2,7 @@ import Foundation
 
 public enum Repeat: Codable, Equatable {
     case everyDay(times: [Trigger.Time])
-    case daily(UInt = 2, time: Trigger.Time)
+    case everyDays(UInt = 2, time: Trigger.Time)
 
     /// Based on `DateComponents.weekday`
     case weekdays([Int], time: Trigger.Time)
@@ -23,7 +23,7 @@ public enum Repeat: Codable, Equatable {
             self = .everyDay(times: times)
         case .daily:
             let (daily, time): (UInt, Trigger.Time) = try container.decodeValues(for: .daily)
-            self = .daily(daily, time: time)
+            self = .everyDays(daily, time: time)
         case .weekdays:
             let (days, time): ([Int], Trigger.Time) = try container.decodeValues(for: .weekdays)
             self = .weekdays(days, time: time)
@@ -61,7 +61,7 @@ public enum Repeat: Codable, Equatable {
         switch self {
         case .everyDay(let times):
             try container.encode(times, forKey: .everyDay)
-        case .daily(let daily, let time):
+        case .everyDays(let daily, let time):
             try container.encodeValues(daily, time, for: .daily)
         case .weekdays(let days, let time):
             try container.encodeValues(days, time, for: .weekdays)

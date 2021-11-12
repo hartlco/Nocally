@@ -45,7 +45,7 @@ extension NotificationTriggerFactory {
         switch `repeat` {
         case .everyDay(let times):
             return makeEveryDayTrigger(using: startDate, times: times)
-        case .daily(let everyDays, let time):
+        case .everyDays(let everyDays, let time):
             switch everyDays {
             case 1:
                 return makeEveryDayTrigger(using: startDate, times: [time])

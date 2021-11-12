@@ -50,7 +50,7 @@ final class NotificationTriggerFactoryTests: XCTestCase {
         let time = Trigger.Time(hour: 12, minute: 12)
 
         let trigger = Trigger(startDate: pastDate,
-                              repeat: .daily(2, time: time))
+                              repeat: .everyDays(2, time: time))
 
         let triggers = factory.makeNotificationTriggers(using: trigger)
         XCTAssertEqual(triggers.count, 5)
@@ -86,7 +86,7 @@ final class NotificationTriggerFactoryTests: XCTestCase {
         let time = Trigger.Time(hour: 12, minute: 12)
 
         let trigger = Trigger(startDate: pastDate,
-                              repeat: .daily(2, time: time))
+                              repeat: .everyDays(2, time: time))
 
         let triggers = factory.makeNotificationTriggers(using: trigger)
         XCTAssertEqual(triggers.count, 5)
@@ -120,7 +120,7 @@ final class NotificationTriggerFactoryTests: XCTestCase {
         let time = Trigger.Time(hour: 12, minute: 12)
 
         let trigger = Trigger(startDate: pastDate,
-                              repeat: .daily(2, time: time))
+                              repeat: .everyDays(2, time: time))
 
         let triggers = factory.makeNotificationTriggers(using: trigger)
         XCTAssertEqual(triggers.count, 5)

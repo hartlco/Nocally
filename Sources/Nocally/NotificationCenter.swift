@@ -29,7 +29,7 @@ extension UNUserNotificationCenter: NotificationCenter {
             systemOptions.insert(.alert)
         }
 
-        if options.contains(.bade) {
+        if options.contains(.badge) {
             systemOptions.insert(.badge)
         }
 

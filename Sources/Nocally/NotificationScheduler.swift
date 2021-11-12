@@ -3,7 +3,7 @@ import NotificationCenter
 
 public struct AuthorizationOption: OptionSet {
     public static let alert = AuthorizationOption(rawValue: 1)
-    public static let bade = AuthorizationOption(rawValue: 1 << 1)
+    public static let badge = AuthorizationOption(rawValue: 1 << 1)
     public static let sound = AuthorizationOption(rawValue: 1 << 3)
 
     public let rawValue: Int8
@@ -26,14 +26,18 @@ public final class NotificationScheduler {
     }
     #endif
 
-    internal init(notificationCenter: NotificationCenter,
-                notificationStore: NotificationStore) {
+    internal init(
+        notificationCenter: NotificationCenter,
+        notificationStore: NotificationStore
+    ) {
         self.notificationCenter = notificationCenter
         self.notificationStore = notificationStore
     }
 
-    public func requestAuthorization(options: AuthorizationOption,
-                                     completionHandler: @escaping (Bool, Error?) -> Void) {
+    public func requestAuthorization(
+        options: AuthorizationOption,
+        completionHandler: @escaping (Bool, Error?) -> Void
+    ) {
         notificationCenter.requestAuthorization(options: options,
                                                 completionHandler: completionHandler)
     }
