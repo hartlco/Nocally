@@ -42,18 +42,14 @@ public final class NotificationScheduler {
                                                 completionHandler: completionHandler)
     }
 
-    public func schedule(notification: Notification) {
-        do {
-            try notificationStore.store(notification: notification)
-            notificationCenter.add(notification: notification) { [weak self] errors in
-                guard let self = self else { return }
+    public func schedule(notification: Notification) throws {
+        try notificationStore.store(notification: notification)
+        notificationCenter.add(notification: notification) { [weak self] errors in
+            guard let self = self else { return }
 
-                if !errors.isEmpty {
-                    self.notificationCenter.removePendingNotificationRequest(for: notification)
-                }
+            if !errors.isEmpty {
+                self.notificationCenter.removePendingNotificationRequest(for: notification)
             }
-        } catch {
-            // TODO: Error handling
         }
     }
 

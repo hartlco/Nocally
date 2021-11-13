@@ -7,6 +7,8 @@ protocol NotificationCenter {
                               completionHandler: @escaping (Bool, Error?) -> Void)
 
     func add(notification: Notification, completion: @escaping (([Error]) -> Void))
+    func add(notification: Notification) async throws
+
     func nextFireDate(for notification: Notification) -> Date?
 
     func removeAllPendingNotificationRequests()

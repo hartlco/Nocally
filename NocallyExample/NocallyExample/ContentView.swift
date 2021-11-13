@@ -37,7 +37,11 @@ struct ContentView: View {
 
     func scheduleNotification() {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        center.requestAuthorization(
+            options: [UNAuthorizationOptions.alert,
+                                              UNAuthorizationOptions.sound,
+                                              UNAuthorizationOptions.badge]
+        ) { granted, error in
 
             if let error = error {
                 // Handle the error here.
@@ -45,7 +49,7 @@ struct ContentView: View {
 
             guard granted else { return }
 
-            let rep = Repeat.daily(1, time: .init(hour: 4, minute: 12))
+            let rep = Repeat.everyDays(1, time: .init(hour: 4, minute: 12))
             let trigger = Trigger(startDate: Date(),
                                   repeat: rep)
             let notification = Nocally.Notification(identifier: "test-1",
