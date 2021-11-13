@@ -56,7 +56,7 @@ struct ContentView: View {
                                                     title: "test",
                                                     message: "message",
                                                     trigger: trigger)
-            scheduler.schedule(notification: notification)
+            try! scheduler.schedule(notification: notification)
 
             UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
                 print(requests)

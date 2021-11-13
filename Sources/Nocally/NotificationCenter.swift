@@ -79,6 +79,19 @@ extension UNUserNotificationCenter: NotificationCenter {
         }
     }
 
+    func add(notification: Notification) async throws {
+        return try await withCheckedThrowingContinuation { continuation in
+            self.add(notification: notification) { errors in
+                if !errors.isEmpty {
+                    let error = NocallyError.schedulingErrors(errors)
+                    continuation.resume(throwing: error)
+                }
+
+                continuation.resume()
+            }
+        }
+    }
+
     func nextFireDate(for notification: Notification) -> Date? {
         var triggers = triggerFactory.makeNotificationTriggers(using: notification.trigger)
         triggers = triggers.sorted { (lhs, rhs) -> Bool in

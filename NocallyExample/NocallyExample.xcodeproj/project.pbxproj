@@ -128,7 +128,7 @@
 			);
 			mainGroup = C56F35DB25D797AE00FE11A6;
 			packageReferences = (
-				C56F360325D79A6100FE11A6 /* XCRemoteSwiftPackageReference "Nocally" */,
+				C56F360325D79A6100FE11A6 /* XCRemoteSwiftPackageReference "." */,
 			);
 			productRefGroup = C56F35E525D797AE00FE11A6 /* Products */;
 			projectDirPath = "";
@@ -215,7 +215,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,7 +289,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NocallyExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +310,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NocallyExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,9 +346,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C56F360325D79A6100FE11A6 /* XCRemoteSwiftPackageReference "Nocally" */ = {
+		C56F360325D79A6100FE11A6 /* XCRemoteSwiftPackageReference "." */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "../";
+			repositoryURL = ../;
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -359,7 +359,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		C56F360425D79A6100FE11A6 /* Nocally */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C56F360325D79A6100FE11A6 /* XCRemoteSwiftPackageReference "Nocally" */;
+			package = C56F360325D79A6100FE11A6 /* XCRemoteSwiftPackageReference "." */;
 			productName = Nocally;
 		};
 /* End XCSwiftPackageProductDependency section */
